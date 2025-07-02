@@ -1,0 +1,268 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  background: #f8fafc;
+  color: #222;
+  padding-top: 80px; /* чтобы контент не был под шапкой */
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+header {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 0;
+  gap: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #256029;
+  gap: 10px;
+  margin-right: auto;
+}
+.logo-img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+.logo-text {
+  color: #256029;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin: 0 150px;
+}
+nav a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+nav a:hover {
+  color: #6ee7b7;
+}
+.btn-outline {
+  border: 2px solid #6ee7b7;
+  color: #6ee7b7;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: none;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline:hover {
+  background: #6ee7b7;
+  color: #fff;
+}
+.btn-main {
+  background: #6ee7b7;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(110, 231, 183, 0.08);
+  transition: background 0.2s;
+}
+.btn-main:hover {
+  background: #34d399;
+}
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(110, 231, 183, 0.1);
+  padding: 32px 28px;
+  margin-bottom: 0;
+}
+/* Подвал сайта */
+.footer {
+  background-color: #eaffea;
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  box-shadow: 0 4px 32px rgba(120, 253, 200, 0.3);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.telegram {
+  background-color: #eaffea;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 16px;
+  }
+  .logo-img {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+  }
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  .logo {
+    font-size: 1.3rem;
+  }
+  nav {
+    margin: 0;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  .header-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+  nav a {
+    font-size: 0.9rem;
+  }
+  .btn-outline {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+  body,
+  html {
+    font-size: 14px;
+  }
+  .btn-main,
+  .btn-outline {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    width: auto;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .header-flex {
+    min-height: 50px;
+  }
+  .logo-img {
+    width: 32px;
+    height: 32px;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+    gap: 4px;
+  }
+  nav {
+    gap: 10px;
+  }
+  nav a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo-text {
+    font-size: 1rem;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .social-links {
+    gap: 15px;
+  }
+  .social-button {
+    width: 36px;
+    height: 36px;
+  }
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+  nav {
+    gap: 8px;
+  }
+  nav a {
+    font-size: 0.8rem;
+  }
+  .btn-main,
+  .btn-outline {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}

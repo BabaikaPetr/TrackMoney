@@ -1,0 +1,478 @@
+.dashboard-section {
+  padding: 40px 0 40px 0;
+  background: #f8fafc;
+  min-height: 80vh;
+}
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  color: #222;
+  text-align: center;
+}
+.username {
+  margin-left: 20px;
+  color: #222;
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.dashboard-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+.balance-block,
+.chart-block {
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 24px 20px;
+}
+.balance-block h3,
+.chart-block h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+.balance-amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #34d399;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.history-block {
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.history-block h3 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.history-table th,
+.history-table td {
+  text-align: center;
+  font-size: 1rem;
+  padding: 16px 15px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.history-table td {
+  /* Добавляем flexbox для выравнивания содержимого, если нужно */
+  /* display: flex; */ /* Removed */
+  /* align-items: center; */ /* Removed */
+  /* justify-content: center; */ /* Removed */
+}
+.history-table th {
+  color: #34d399;
+  font-weight: 700;
+  background: #f8fafc;
+  white-space: nowrap;
+  text-align: center;
+}
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+.history-table th:nth-child(1),
+.history-table td:nth-child(1) {
+  width: 170px;
+  min-width: 140px;
+  text-align: left; /* Выравнивание даты по левому краю */
+}
+.history-table th:nth-child(2),
+.history-table td:nth-child(2) {
+  width: 200px;
+  min-width: 160px;
+  text-align: left; /* Выравнивание категории по левому краю */
+}
+.history-table th:nth-child(3),
+.history-table td:nth-child(3) {
+  width: 140px;
+  min-width: 100px;
+  text-align: center; /* Выравнивание суммы по центру */
+}
+.history-table th:nth-child(4),
+.history-table td:nth-child(4) {
+  width: 100px;
+  min-width: 80px;
+  text-align: center; /* Выравнивание типа по центру */
+}
+
+/* Стили для колонки с кнопкой удаления */
+.history-table th:nth-child(5),
+.history-table td:nth-child(5) {
+  width: 50px; /* Уменьшаем ширину для крестика */
+  min-width: 40px;
+  padding: 16px 5px; /* Уменьшаем горизонтальные отступы */
+  text-align: center; /* Выравнивание крестика по центру */
+}
+
+.history-table tr:hover {
+  background: #f3fdf8;
+  transition: background 0.2s;
+}
+@media (max-width: 1100px) {
+  .dashboard-flex {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .chart-block,
+  .balance-block {
+    width: 100%;
+    min-width: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .username {
+    margin-left: 15px;
+  }
+}
+@media (max-width: 900px) {
+  .dashboard-section {
+    padding: 30px 0;
+  }
+  .dashboard-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+  .dashboard-flex {
+    gap: 24px;
+    padding: 0 15px;
+  }
+  .balance-block,
+  .chart-block {
+    padding: 20px 15px;
+  }
+  .balance-amount {
+    font-size: 2rem;
+  }
+  .history-block {
+    padding: 0 15px;
+  }
+  .header-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .username {
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  .logout-btn {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-section {
+    padding: 20px 0;
+  }
+  .dashboard-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .dashboard-flex {
+    gap: 20px;
+    padding: 0 12px;
+  }
+  .balance-block h3,
+  .chart-block h3 {
+    font-size: 1.1rem;
+  }
+  .balance-amount {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  .history-block {
+    padding: 0 12px;
+  }
+  .history-table {
+    font-size: 0.95rem;
+  }
+  .history-table th,
+  .history-table td {
+    padding: 10px 12px;
+  }
+  .modal-content {
+    margin: 15px;
+    padding: 20px 15px;
+  }
+  .modal-form-flex input,
+  .modal-form-flex select {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  .header-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+  }
+  .logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    gap: 8px;
+    width: 100%;
+  }
+  .username {
+    margin: 4px 0 0 0;
+    font-size: 0.95rem;
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #444;
+  }
+  .logout-btn {
+    margin: 8px 0 0 0;
+    width: 90%;
+    max-width: 260px;
+    align-self: center;
+    font-size: 0.95rem;
+    padding: 10px 0;
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  .dashboard-section {
+    padding: 15px 0;
+  }
+  .dashboard-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  .dashboard-flex {
+    gap: 15px;
+    padding: 0 10px;
+  }
+  .balance-block,
+  .chart-block {
+    padding: 15px 12px;
+  }
+  .balance-block h3,
+  .chart-block h3 {
+    font-size: 1rem;
+  }
+  .balance-amount {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+  .history-block {
+    padding: 0 10px;
+  }
+  .history-block h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .history-table {
+    font-size: 0.9rem;
+  }
+  .history-table th,
+  .history-table td {
+    padding: 8px 10px;
+  }
+  .modal-content {
+    margin: 10px;
+    padding: 15px 12px;
+  }
+  .modal-form-flex {
+    gap: 10px;
+  }
+  .modal-form-flex input,
+  .modal-form-flex select {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  .close {
+    font-size: 24px;
+    top: 10px;
+    right: 15px;
+  }
+  .header-flex {
+    padding: 8px 0;
+  }
+  .logo-text {
+    font-size: 1.1rem;
+  }
+  .logo-img {
+    width: 28px;
+    height: 28px;
+  }
+  .username {
+    font-size: 0.9rem;
+  }
+  .logout-btn {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+}
+@media (max-width: 360px) {
+  .dashboard-title {
+    font-size: 1.2rem;
+  }
+  .balance-amount {
+    font-size: 1.4rem;
+  }
+  .history-table {
+    font-size: 0.85rem;
+  }
+  .history-table th,
+  .history-table td {
+    padding: 6px 8px;
+  }
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+}
+.modal.show {
+  display: flex !important;
+}
+.modal-content {
+  background: #fff;
+  margin: 20px;
+  padding: 24px 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(110, 231, 183, 0.18);
+  width: calc(100% - 40px);
+  max-width: 400px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  float: right;
+}
+.close:hover {
+  color: #34d399;
+}
+
+.modal-form-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.modal-form-flex input,
+.modal-form-flex select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border: 2px solid #e6e6e6;
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 1rem;
+  color: #222;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.modal-form-flex input:focus,
+.modal-form-flex select:focus {
+  border-color: #6ee7b7;
+  box-shadow: 0 0 0 2px #6ee7b733;
+}
+.modal-form-flex input::placeholder {
+  color: #b0b0b0;
+  opacity: 1;
+}
+
+.modal-btn-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 12px;
+  border: none;
+}
+
+#openModalBtn {
+  margin-top: 10px;
+}
+
+.modal-content .btn-main {
+  border: none !important;
+  box-shadow: none;
+}
+
+.balance-block .btn-main {
+  border: none !important;
+  box-shadow: none;
+}
+
+.logout-btn {
+  margin-left: 400px;
+  margin-right: 0;
+  padding: 10px 24px;
+  font-size: 1rem;
+  background: #34d399;
+  color: #fff;
+  border: none !important;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+  box-shadow: none;
+  outline: none;
+}
+.logout-btn:hover {
+  background: #2eba86;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Стили для кнопки удаления транзакции (красный крестик) */
+.delete-transaction-btn {
+  background: none;
+  border: none;
+  color: #f87171; /* Красный цвет */
+  font-size: 1.2rem; /* Размер крестика */
+  cursor: pointer;
+  padding: 0; /* Убираем внутренние отступы */
+  line-height: 1; /* Выравнивание по вертикали */
+}
+
+.delete-transaction-btn:hover {
+  color: #ef4444; /* Цвет при наведении */
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ — TrackMoney</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container header-flex">
+        <div class="logo">
+          <img
+            src="../images/smartphone-green.png"
+            alt="TrackMoney logo"
+            class="logo-img"
+          />
+          <span class="logo-text">TrackMoney</span>
+        </div>
+        <span id="username" class="username"></span>
+        <button id="logoutBtn" class="btn-main logout-btn">Выйти</button>
+      </div>
+    </header>
+    <main>
+      <section class="dashboard-section">
+        <h2 class="dashboard-title">Админ-панель</h2>
+        <div class="card add-category-card">
+          <form id="addCategoryForm" class="add-category-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Название категории"
+              required
+              class="input-kategor"
+            />
+            <button type="submit" class="btn-main add-category-btn">
+              Добавить категорию
+            </button>
+          </form>
+          <div id="addCategoryMsg" class="add-category-msg"></div>
+        </div>
+        <div class="card categories-list-card">
+          <h3>Список категорий</h3>
+          <ul id="categoriesList" class="categories-list"></ul>
+        </div>
+      </section>
+    </main>
+    <script src="../js/admin.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

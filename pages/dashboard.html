@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дашборд — TrackMoney</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container header-flex">
+        <div class="logo">
+          <img
+            src="../images/smartphone-green.png"
+            alt="TrackMoney logo"
+            class="logo-img"
+          />
+          <span class="logo-text">TrackMoney</span>
+        </div>
+
+        <span id="username" class="username"></span>
+        <button id="logoutBtn" class="btn-main logout-btn">Выйти</button>
+      </div>
+    </header>
+    <main>
+      <section class="dashboard-section">
+        <h2 class="dashboard-title">Ваши финансы</h2>
+        <div class="dashboard-flex">
+          <div class="balance-block">
+            <h3>Баланс</h3>
+            <div class="balance-amount" id="balance">0 ₽</div>
+            <button id="openModalBtn" class="btn-main">Добавить</button>
+          </div>
+          <div class="chart-block">
+            <h3>График расходов</h3>
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+        <div class="history-block">
+          <h3>История операций</h3>
+          <table class="history-table" id="historyTable">
+            <thead>
+              <tr>
+                <th>Дата</th>
+                <th>Категория</th>
+                <th>Сумма</th>
+                <th>Тип</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Операции будут подгружаться динамически -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 TrackMoney</p>
+        <div class="social-links">
+          <a
+            href="https://t.me/verapetr16"
+            target="_blank"
+            class="social-button telegram"
+          >
+            <img
+              src="../images/telegram.png"
+              alt="Telegram"
+              class="social-icon"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <div id="addTransactionModal" class="modal">
+      <div class="modal-content card">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h3>Добавить операцию</h3>
+        <form id="transactionForm">
+          <div class="modal-form-flex">
+            <input type="number" name="amount" placeholder="Сумма" required />
+            <select name="type" required>
+              <option value="income">Доход</option>
+              <option value="expense">Расход</option>
+            </select>
+            <select name="category_id" required>
+              <option value="">Категория</option>
+              <!-- Категории будут подгружаться динамически -->
+            </select>
+            <input
+              type="text"
+              name="description"
+              placeholder="Описание (необязательно)"
+            />
+          </div>
+          <div class="modal-btn-center">
+            <button type="submit" class="btn-main">Добавить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/add_transaction.js"></script>
+  </body>
+</html>

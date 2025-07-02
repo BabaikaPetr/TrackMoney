@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавить транзакцию — TrackMoney</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
+    <script src="../js/dashboard.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container header-flex">
+        <div class="logo">
+          <img
+            src="../images/smartphone-green.png"
+            alt="TrackMoney logo"
+            class="logo-img"
+          />
+          <span class="logo-text">TrackMoney</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="auth-section">
+        <div class="container auth-container card">
+          <h2 class="dashboard-title">Добавить транзакцию</h2>
+          <form
+            id="addTransactionForm"
+            method="POST"
+            action="../includes/add_transaction.php"
+          >
+            <input type="number" name="amount" placeholder="Сумма" required />
+            <input
+              type="text"
+              name="category"
+              placeholder="Категория"
+              required
+            />
+            <select name="type" required>
+              <option value="income">Доход</option>
+              <option value="expense">Расход</option>
+            </select>
+            <button type="submit" class="btn-main">Добавить</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 TrackMoney</p>
+        <div class="social-links">
+          <a
+            href="https://t.me/verapetr16"
+            target="_blank"
+            class="social-button telegram"
+          >
+            <img
+              src="../images/telegram.png"
+              alt="Telegram"
+              class="social-icon"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/add_transaction.js"></script>
+  </body>
+</html>
